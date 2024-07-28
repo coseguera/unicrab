@@ -17,32 +17,37 @@ points:
         pinky:
           key:
             column_net: P010
+            # mirror.column_net: P104
         ring:
           key:
             stagger: 0.66py
-            column_net: P009
+            column_net: P111
+            # mirror.column_net: P011
         middle:
           key:
             stagger: 0.25py
-            column_net: P011
+            column_net: P113
+            # mirror.column_net: P100
         index:
           key:
             stagger: -0.25py
-            column_net: P104
+            column_net: P115
+            # mirror.column_net: P024
         inner:
           key:
             stagger: -0.15py
-            column_net: P106
+            column_net: P002
+            # mirror.column_net: P022
       rows:
         bottom:
-          row_net: P113
-          mirror.row_net: P024
-        home:
-          row_net: P115
-          mirror.row_net: P022
-        top:
-          row_net: P002
+          row_net: P029
           mirror.row_net: P020
+        home:
+          row_net: P031
+          mirror.row_net: P017
+        top:
+          row_net: P006
+          mirror.row_net: P008
     thumb:
       key:
         padding: 1ky
@@ -54,16 +59,18 @@ points:
       columns:
         tucky:
           key:
-            column_net: P104
+            column_net: P010
+            # mirror.column_net: P104
         reachy:
           key:
             splay: -15
             origin: [-0.5px,-0.5py]
-            column_net: P106
+            column_net: P111
+            # mirror.column_net: P011
       rows:
         cluster:
-          row_net: P111
-          mirror.row_net: P100
+          row_net: P009
+          mirror.row_net: P106
   rotate: -15
   mirror: &mirror
     ref: matrix_inner_top
@@ -83,60 +90,36 @@ outlines:
     points:
     - ref: matrix_pinky_top
       shift: [-0.5px,0.5py]
-    - ref: matrix_pinky_top
-      shift: [0.4px,0.5py]
     - ref: matrix_ring_top
       shift: [-0.5px,0.5py]
-    - ref: matrix_ring_top
-      shift: [0.4px,0.5py]
     - ref: matrix_middle_top
       shift: [-0.5px,0.5py]
     - ref: matrix_middle_top
       shift: [0.5px,0.5py]
     - ref: matrix_index_top
-      shift: [-0.4px,0.5py]
-    - ref: matrix_index_top
       shift: [0.5px,0.5py]
     - ref: matrix_inner_top
-      shift: [-0.4px,0.5py]
+      shift: [0.5px,0.5py]
     - ref: matrix_inner_top
-      shift: [0.5px,0.5py]
+      shift: [0.5px,-0.2py]
+    - ref: mirror_matrix_inner_top
+      shift: [0.5px,-0.2py]
     - ref: mirror_matrix_inner_top
       shift: [0.5px,0.5py]
-    - ref: mirror_matrix_inner_top
-      shift: [-0.4px,0.5py]
     - ref: mirror_matrix_index_top
       shift: [0.5px,0.5py]
-    - ref: mirror_matrix_index_top
-      shift: [-0.4px,0.5py]
     - ref: mirror_matrix_middle_top
       shift: [0.5px,0.5py]
     - ref: mirror_matrix_middle_top
       shift: [-0.5px,0.5py]
     - ref: mirror_matrix_ring_top
-      shift: [0.4px,0.5py]
-    - ref: mirror_matrix_ring_top
       shift: [-0.5px,0.5py]
-    - ref: mirror_matrix_pinky_top
-      shift: [0.4px,0.5py]
     - ref: mirror_matrix_pinky_top
       shift: [-0.5px,0.5py]
     - ref: mirror_matrix_pinky_bottom
       shift: [-0.5px,-0.5py]
     - ref: mirror_matrix_pinky_bottom
       shift: [0.5px,-0.5py]
-    - ref: mirror_matrix_ring_bottom
-      shift: [-0.4px,-0.5py]
-    - ref: mirror_matrix_ring_bottom
-      shift: [0.5px,-0.5py]
-    - ref: mirror_matrix_middle_bottom
-      shift: [-0.4px,-0.5py]
-    - ref: mirror_matrix_middle_bottom
-      shift: [0.4px,-0.5py]
-    - ref: mirror_matrix_index_bottom
-      shift: [-0.5px,-0.5py]
-    - ref: mirror_matrix_index_bottom
-      shift: [0.1px,-0.5py]
     - ref: mirror_thumb_tucky_cluster
       shift: [-0.5px,-0.5py]
     - ref: mirror_thumb_tucky_cluster
@@ -153,18 +136,6 @@ outlines:
       shift: [0.5px,-0.5py]
     - ref: thumb_tucky_cluster
       shift: [-0.5px,-0.5py]
-    - ref: matrix_index_bottom
-      shift: [0.1px,-0.5py]
-    - ref: matrix_index_bottom
-      shift: [-0.5px,-0.5py]
-    - ref: matrix_middle_bottom
-      shift: [0.4px,-0.5py]
-    - ref: matrix_middle_bottom
-      shift: [-0.4px,-0.5py]
-    - ref: matrix_ring_bottom
-      shift: [0.5px,-0.5py]
-    - ref: matrix_ring_bottom
-      shift: [-0.4px,-0.5py]
     - ref: matrix_pinky_bottom
       shift: [0.5px,-0.5py]
     - ref: matrix_pinky_bottom
@@ -202,15 +173,33 @@ pcbs:
         params:
           orientation: down
         where:
-          ref.aggregate.parts: [matrix_inner_home, mirror_matrix_inner_home]
-          shift: [0,3]
+          ref.aggregate.parts: [matrix_inner_bottom, mirror_matrix_inner_bottom]
+          shift: [0,7]
           rotate: -90
-      #reset:
-      #  what: button
-      #  params:
-      #    from: GND
-      #    to: RST
-      #  where:
-      #    ref.aggregate.parts: [matrix_index_bottom, mirror_matrix_index_bottom]
-      #    shift: [0, -1]
-      #    rotate: -90
+      jstph:
+        what: jstph
+        where:
+          ref.aggregate.parts: [thumb_tucky_cluster, mirror_thumb_tucky_cluster]
+          shift: [-15,2]
+          rotate: 90
+        params:
+          pos: pos
+          neg: GND
+      battery_switch:
+        what: slider
+        where:
+          ref.aggregate.parts: [thumb_tucky_cluster, mirror_thumb_tucky_cluster]
+          shift: [0,-7]
+          rotate: 180
+        params:
+          from: pos
+          to: RAW
+      reset:
+        what: button
+        params:
+          from: GND
+          to: RST
+        where:
+          ref.aggregate.parts: [thumb_tucky_cluster, mirror_thumb_tucky_cluster]
+          shift: [12,2]
+          rotate: 0
