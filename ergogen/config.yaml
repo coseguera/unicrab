@@ -101,9 +101,9 @@ outlines:
     - ref: matrix_inner_top
       shift: [0.5px,0.5py]
     - ref: matrix_inner_top
-      shift: [0.5px,-0.2py]
+      shift: [0.5px,-0.3py]
     - ref: mirror_matrix_inner_top
-      shift: [0.5px,-0.2py]
+      shift: [0.5px,-0.3py]
     - ref: mirror_matrix_inner_top
       shift: [0.5px,0.5py]
     - ref: mirror_matrix_index_top
@@ -171,8 +171,8 @@ pcbs:
       battery_switch:
         what: slider
         where:
-          ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
-          shift: [0,-9]
+          ref.aggregate.parts: [matrix_inner_home, mirror_matrix_inner_home]
+          shift: [0,5]
           rotate: 0
         params:
           side: B
@@ -184,7 +184,7 @@ pcbs:
           orientation: down
         where:
           ref.aggregate.parts: [matrix_inner_bottom, mirror_matrix_inner_bottom]
-          shift: [0,8]
+          shift: [0,6]
           rotate: -90
       jstph:
         what: jstph
