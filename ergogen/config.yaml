@@ -90,14 +90,22 @@ outlines:
     points:
     - ref: matrix_pinky_top
       shift: [-0.5px,0.5py]
+    - ref: matrix_pinky_top
+      shift: [0.4px,0.5py]
     - ref: matrix_ring_top
       shift: [-0.5px,0.5py]
+    - ref: matrix_ring_top
+      shift: [0.4px,0.5py]
     - ref: matrix_middle_top
       shift: [-0.5px,0.5py]
     - ref: matrix_middle_top
       shift: [0.5px,0.5py]
     - ref: matrix_index_top
+      shift: [-0.4px,0.5py]
+    - ref: matrix_index_top
       shift: [0.5px,0.5py]
+    - ref: matrix_inner_top
+      shift: [-0.3px,0.5py]
     - ref: matrix_inner_top
       shift: [0.5px,0.5py]
     - ref: matrix_inner_top
@@ -106,20 +114,32 @@ outlines:
       shift: [0.5px,-0.3py]
     - ref: mirror_matrix_inner_top
       shift: [0.5px,0.5py]
+    - ref: mirror_matrix_inner_top
+      shift: [-0.3px,0.5py]
     - ref: mirror_matrix_index_top
       shift: [0.5px,0.5py]
+    - ref: mirror_matrix_index_top
+      shift: [-0.4px,0.5py]
     - ref: mirror_matrix_middle_top
       shift: [0.5px,0.5py]
     - ref: mirror_matrix_middle_top
       shift: [-0.5px,0.5py]
     - ref: mirror_matrix_ring_top
+      shift: [0.4px,0.5py]
+    - ref: mirror_matrix_ring_top
       shift: [-0.5px,0.5py]
+    - ref: mirror_matrix_pinky_top
+      shift: [0.4px,0.5py]
     - ref: mirror_matrix_pinky_top
       shift: [-0.5px,0.5py]
     - ref: mirror_matrix_pinky_bottom
       shift: [-0.5px,-0.5py]
     - ref: mirror_matrix_pinky_bottom
       shift: [0.5px,-0.5py]
+    - ref: mirror_matrix_ring_bottom
+      shift: [0,-0.7py]
+    - ref: mirror_matrix_index_bottom
+      shift: [0,-0.7py]
     - ref: mirror_thumb_tucky_cluster
       shift: [-0.5px,-0.5py]
     - ref: mirror_thumb_tucky_cluster
@@ -136,6 +156,10 @@ outlines:
       shift: [0.5px,-0.5py]
     - ref: thumb_tucky_cluster
       shift: [-0.5px,-0.5py]
+    - ref: matrix_index_bottom
+      shift: [0,-0.7py]
+    - ref: matrix_ring_bottom
+      shift: [0,-0.7py]
     - ref: matrix_pinky_bottom
       shift: [0.5px,-0.5py]
     - ref: matrix_pinky_bottom
@@ -178,14 +202,14 @@ pcbs:
           side: B
           from: RAW
           to: pos
-      nice_nano:
-        what: nice_nano
-        params:
-          orientation: down
-        where:
-          ref.aggregate.parts: [matrix_inner_bottom, mirror_matrix_inner_bottom]
-          shift: [0,6]
-          rotate: -90
+      # nice_nano:
+      #   what: nice_nano
+      #   params:
+      #     orientation: down
+      #   where:
+      #     ref.aggregate.parts: [matrix_inner_bottom, mirror_matrix_inner_bottom]
+      #     shift: [0,6]
+      #     rotate: -90
       jstph:
         what: jstph
         where:
