@@ -176,8 +176,8 @@ pcbs:
           rotate: 0
         params:
           side: B
-          from: pos
-          to: RAW
+          from: RAW
+          to: pos
       nice_nano:
         what: nice_nano
         params:
