@@ -168,6 +168,16 @@ pcbs:
           to: "{{row_net}}"
         adjust:
           shift: [0,-5]
+      battery_switch:
+        what: slider
+        where:
+          ref.aggregate.parts: [matrix_inner_top, mirror_matrix_inner_top]
+          shift: [0,-9]
+          rotate: 0
+        params:
+          side: B
+          from: pos
+          to: RAW
       nice_nano:
         what: nice_nano
         params:
@@ -185,15 +195,6 @@ pcbs:
         params:
           pos: pos
           neg: GND
-      battery_switch:
-        what: slider
-        where:
-          ref.aggregate.parts: [thumb_tucky_cluster, mirror_thumb_tucky_cluster]
-          shift: [0,-7]
-          rotate: 180
-        params:
-          from: pos
-          to: RAW
       reset:
         what: button
         params:
