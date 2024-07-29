@@ -190,8 +190,8 @@ pcbs:
         what: jstph
         where:
           ref.aggregate.parts: [thumb_tucky_cluster, mirror_thumb_tucky_cluster]
-          shift: [-15,2]
-          rotate: 90
+          shift: [15,0]
+          rotate: -90
         params:
           pos: pos
           neg: GND
