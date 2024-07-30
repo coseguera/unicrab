@@ -16,38 +16,33 @@ points:
       columns:
         pinky:
           key:
-            column_net: P010
-            # mirror.column_net: P104
+            column_net: P009
         ring:
           key:
             stagger: 0.66py
-            column_net: P111
-            # mirror.column_net: P011
+            column_net: P010
         middle:
           key:
             stagger: 0.25py
-            column_net: P113
-            # mirror.column_net: P100
+            column_net: P111
         index:
           key:
             stagger: -0.25py
-            column_net: P115
-            # mirror.column_net: P024
+            column_net: P113
         inner:
           key:
             stagger: -0.15py
-            column_net: P002
-            # mirror.column_net: P022
+            column_net: P115
       rows:
         bottom:
-          row_net: P029
-          mirror.row_net: P020
+          row_net: P002
+          mirror.row_net: P022
         home:
           row_net: P031
           mirror.row_net: P017
         top:
-          row_net: P006
-          mirror.row_net: P008
+          row_net: P029
+          mirror.row_net: P020
     thumb:
       key:
         padding: 1ky
@@ -59,17 +54,15 @@ points:
       columns:
         tucky:
           key:
-            column_net: P010
-            # mirror.column_net: P104
+            column_net: P009
         reachy:
           key:
             splay: -15
             origin: [-0.5px,-0.5py]
-            column_net: P111
-            # mirror.column_net: P011
+            column_net: P010
       rows:
         cluster:
-          row_net: P009
+          row_net: P104
           mirror.row_net: P106
   rotate: -15
   mirror: &mirror
@@ -214,7 +207,7 @@ pcbs:
         what: jstph
         where:
           ref.aggregate.parts: [thumb_tucky_cluster, mirror_thumb_tucky_cluster]
-          shift: [15,0]
+          shift: [15,1]
           rotate: -90
         params:
           pos: pos
@@ -226,5 +219,5 @@ pcbs:
           to: RST
         where:
           ref.aggregate.parts: [matrix_inner_home, mirror_matrix_inner_home]
-          shift: [-13,-5]
-          rotate: 90
+          shift: [-13.5,-4]
+          rotate: 75
