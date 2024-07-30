@@ -38,11 +38,11 @@ points:
           row_net: P002
           mirror.row_net: P022
         home:
-          row_net: P031
-          mirror.row_net: P017
-        top:
           row_net: P029
           mirror.row_net: P020
+        top:
+          row_net: P031
+          mirror.row_net: P017
     thumb:
       key:
         padding: 1ky
